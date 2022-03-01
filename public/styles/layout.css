@@ -10,15 +10,36 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
+html *{
+  font-family: source sans pro, sans-serif; 
+}
 
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
 }
+
+.container {
+  width: 90%;
+  display: flex;
+  background-color: #f4f1ec;
+  margin-left: 5%;
+  margin-right: 5%;  
+}
+
+.container > h2 {
+  text-align: center;
+}
+
+.input  {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

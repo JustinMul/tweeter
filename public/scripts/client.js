@@ -69,6 +69,9 @@ const renderTweets = function(tweets) {
 };
 const $tweet = renderTweets(tweetData);
 
-
+$("#submitter").submit(function(event) {
+  // console.log('event;',event)
+  event.preventDefault();
+});
 
 

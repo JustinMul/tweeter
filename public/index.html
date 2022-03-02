@@ -14,18 +14,19 @@
     <link rel="stylesheet" href="/styles/nav.css" >
     <link rel="stylesheet" href="/styles/header.css" >
     <link rel="stylesheet" href="/styles/new-tweet.css" >
+    <link rel="stylesheet" href="/styles/tweetBody.css" >
+  
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-
+    
     
   </head>
-
+  
   <body>
     <!-- Top nav bar (fixed) -->
     <nav style="z-index: 1">
@@ -36,17 +37,18 @@
       </div>
     </nav>
     <!-- Page-specific (main) content here -->
-
-    <header>
+    
+    <header class ='profileBackground'>
       <div>
-          <img src="/images/profile-hex.png"> 
+        <img src="/images/profile-hex.png"> 
       </div>
       <br>
       <div>
-          <h2>Your Name</h2>
+        <h2>Your Name</h2>
       </div>
-  </header>
+    </header>
     <main class="container">
+
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form class="input" method = "POST" action="/tweets/">
@@ -54,10 +56,95 @@
           <textarea name="text" id="tweet-text"></textarea>
           <div class="buttonAndCounter">
             <button class='submitButton'type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+            <output name="counter" id="remainChar"  class="counter" for="tweet-text">140</output>
           </div>
         </form>
-      </section> 
+      </section>
+      
+
+      <section class = "tweetBody">
+        <header class="tweetTop">
+        <div class = "logo-name">
+          <img class = 'profileIcon' src="/images/profile-hex.png"/>
+          <div>NAME</div> 
+        </div>
+        <div>handle</div> 
+      </header>
+
+      <div>body text</div>
+      <footer class = "tweetBottom">
+        <div>how long ago posted</div>
+        <div class = 'icons'>
+          <i id = 'flagContainer' class="fa-solid fa-flag"></i>
+          <i id = 'retweetContainer' class="fa-solid fa-retweet"></i>
+          <i id = 'heartContainer' class="fa-solid fa-heart"></i>
+        </div>
+      </footer>
+      </section>
+
+
+      <section class = 'tweetBody'>
+        <header class="tweetTop">
+        <div class = "logo-name">
+          <img class = 'profileIcon' src="/images/profile-hex.png"/>
+          <div>NAME</div> 
+        </div>
+        <div>handle</div> 
+      </header>
+
+      <div>body text</div>
+      <footer class = "tweetBottom">
+        <div>how long ago posted</div>
+        <div class = 'icons'>
+          <i id = 'flagContainer' class="fa-solid fa-flag"></i>
+          <i id = 'retweetContainer' class="fa-solid fa-retweet"></i>
+          <i id = 'heartContainer' class="fa-solid fa-heart"></i>
+        </div>
+      </footer>
+      </section>
+
+      <section class = "tweetBody">
+        <header class="tweetTop">
+        <div class = "logo-name">
+          <img class = 'profileIcon' src="/images/profile-hex.png"/>
+          <div>NAME</div> 
+        </div>
+        <div>handle</div> 
+      </header>
+
+      <div>body text</div>
+      <footer class = "tweetBottom">
+        <div>how long ago posted</div>
+        <div class = 'icons'>
+          <i id = 'flagContainer' class="fa-solid fa-flag"></i>
+          <i id = 'retweetContainer' class="fa-solid fa-retweet"></i>
+          <i id = 'heartContainer' class="fa-solid fa-heart"></i>
+        </div>
+      </footer>
+      </section>
+
+      <section class = "tweetBody">
+        <header class="tweetTop">
+        <div class = "logo-name">
+          <img class = 'profileIcon' src="/images/profile-hex.png"/>
+          <div>NAME</div> 
+        </div>
+        <div>handle</div> 
+      </header>
+
+      <div>body text</div>
+      <footer class = "tweetBottom">
+        <div>how long ago posted</div>
+        <div class = 'icons'>
+          <i id = 'flagContainer' class="fa-solid fa-flag"></i>
+          <i id = 'retweetContainer' class="fa-solid fa-retweet"></i>
+          <i id = 'heartContainer' class="fa-solid fa-heart"></i>
+        </div>
+      </footer>
+      </section>
+
     </main>
   </body>
-</html>
+  <script src="/scripts/composer-char-counter.js"></script>
+  </html>
+  

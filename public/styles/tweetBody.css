@@ -1,0 +1,44 @@
+.tweetTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.tweetBottom { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profileIcon{
+width: 64px;
+}
+
+.logo-name{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icons{
+  display: flex;
+  flex-direction: row;
+}
+
+#flagContainer:hover {
+  color: yellow;
+}
+
+#retweetContainer:hover {
+  color: yellow;
+}
+#heartContainer:hover {
+  color: yellow;
+}
+
+.tweetBody {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid black;
+
+}

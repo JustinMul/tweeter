@@ -7,7 +7,7 @@ const remainingChars = document.getElementById("remainChar");
 $(document).ready(function() {
   $('#tweet-text').on('input', function() {
     console.log(this);
-      
+  
     let remainCount = charCount - this.value.length;
 
     remainingChars.textContent = `${remainCount}`;

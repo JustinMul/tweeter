@@ -59,19 +59,43 @@ const renderTweets = function(tweets) {
   
   console.log('tweets', tweets);
   let allTweet;
+  tweets.reverse();
   for (const objs of tweets) {
     // console.log('the object',objs);
     allTweet = $(".tweetBody").append(createTweetElement(objs));
-
   }
-  // console.log('alltweet', allTweet);
+  
   return allTweet;
 };
-const $tweet = renderTweets(tweetData);
 
-$("#submitter").submit(function(event) {
-  // console.log('event;',event)
-  event.preventDefault();
-});
+const submitChange = function () {
+  $("#submitter").submit(function(event) {
+    event.preventDefault();
+    let serializeValue = $('#tweet-text').serialize();
+    let val = $('#tweet-text').val();
+    console.log(val.length)
+    if (val === '' || val === null) {
+      alert('Must add text to submit to form');
+    } else if (val.length > 140) {
+      alert('Too many characters, please shorten!')
+    } else {
+      $.ajax({
+        type: "POST",
+        url: '/tweets',
+        data: serializeValue
+      }).then(() => location.reload());
+      
+    }
+  });
+};
 
+submitChange();
 
+const loadTweets =  function() {
+  $.ajax('/tweets', { method: 'GET' })
+    .then(function(tweets) {
+      return renderTweets(tweets);
+    });
+};
+
+loadTweets();

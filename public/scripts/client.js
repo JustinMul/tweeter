@@ -71,10 +71,6 @@ const renderTweets = function(tweets) {
 const submitChange = function () {
   $("#submitter").submit(function(event) {
     event.preventDefault();
-    // $('#submitter').text($('#tweet-text').val());
-  
-    // let serializeValue = $("#").text($("#tweet-text")).val();
-
     let serializeValue = $("#tweet-text").serialize();
 
     let val = $('#tweet-text').val();

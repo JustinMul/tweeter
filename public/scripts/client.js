@@ -38,7 +38,7 @@ const createTweetElement = function(tweet) {
     <div>${tweet.user.handle}</div> 
     </header>
     
-    <p>${tweet.content.text}</p>
+    <p>${escape(tweet.content.text)}</p>
     
     <footer class = "tweetBottom">
     <div>${timeago.format(tweet.created_at)}</div>
@@ -71,19 +71,30 @@ const renderTweets = function(tweets) {
 const submitChange = function () {
   $("#submitter").submit(function(event) {
     event.preventDefault();
-    let serializeValue = $('#tweet-text').serialize();
+    // $('#submitter').text($('#tweet-text').val());
+  
+    // let serializeValue = $("#").text($("#tweet-text")).val();
+
+    let serializeValue = $("#tweet-text").serialize();
+
     let val = $('#tweet-text').val();
-    console.log(val.length)
+
     if (val === '' || val === null) {
-      alert('Must add text to submit to form');
+      $("#no-char").slideDown("slow");
     } else if (val.length > 140) {
-      alert('Too many characters, please shorten!')
+      $("#char-over-limit").slideDown("slow");
     } else {
+      if ($("#no-char").is(":visible")) {
+        $("#no-char").slideUp("slow");
+      }
+      if ($("#char-over-limit").is(":visible")) {
+        $("#char-over-limit").slideUp("slow");
+      }
       $.ajax({
         type: "POST",
         url: '/tweets',
         data: serializeValue
-      }).then(() => location.reload());
+      }).then(() => location.reload()).catch(() => console.log("didnt work"));
       
     }
   });
@@ -99,3 +110,9 @@ const loadTweets =  function() {
 };
 
 loadTweets();
+
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};

@@ -37,6 +37,9 @@ width: 64px;
   color: yellow;
 }
 
+.tweet:hover {
+  box-shadow: 10px 10px 5px grey;
+}
 .tweet {
   margin-top: 10px;
   margin-bottom: 10px;

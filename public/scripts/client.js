@@ -1,6 +1,8 @@
 /* eslint-env jquery */
 /* eslint-env browser */
 
+// file used for the purposes of submmiting and rendering tweets.
+
 
 const tweetData = [
   {
@@ -26,6 +28,8 @@ const tweetData = [
   }
 ];
 
+
+// uses jquery to fill out the tweet body in the html
 const createTweetElement = function(tweet) {
   
   const $tweet = $(`
@@ -55,19 +59,20 @@ const createTweetElement = function(tweet) {
 
 };
 
+//used to make the tweets appear in the tweetBody
 const renderTweets = function(tweets) {
   
   console.log('tweets', tweets);
   let allTweet;
   tweets.reverse();
   for (const objs of tweets) {
-    // console.log('the object',objs);
     allTweet = $(".tweetBody").append(createTweetElement(objs));
   }
   
   return allTweet;
 };
 
+//used to ensure tweet contents are valid and searialize tweets.
 const submitChange = function () {
   $("#submitter").submit(function(event) {
     event.preventDefault();

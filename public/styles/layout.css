@@ -3,6 +3,8 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+ /* used to help format the overall website specifically fonts, background colors, flex direction, and margins */
 html {
   box-sizing: border-box;
 }

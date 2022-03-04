@@ -1,5 +1,7 @@
 /* eslint-env jquery */
 /* eslint-env browser */
+
+// file is used to live update the character counter
 let charCount = 140;
 const textArea = document.getElementById('tweet-text');
 const remainingChars = document.getElementById("remainChar");
@@ -9,7 +11,6 @@ $(document).ready(function() {
     console.log(this);
   
     let remainCount = charCount - this.value.length;
-
     remainingChars.textContent = `${remainCount}`;
 
     if (remainCount < 0) {
@@ -21,7 +22,7 @@ $(document).ready(function() {
     }
   });
   textArea.addEventListener("input", () => {
-    // console.log(element)
+    
     
   });
 

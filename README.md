@@ -1,7 +1,8 @@
 # Tweeter Project
 
+## Project Purpose
 
-This project was created with the purpose of creating the front end of a twitter like website. 
+Creating the front end functionality of a twitter like website. 
 
 The site was built to be responsive to the brower size of the user and updates in real time. 
 
